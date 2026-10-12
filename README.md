@@ -37,7 +37,7 @@
        chl19940220.github.io repo as files/cv.pdf and use
        https://chl19940220.github.io/files/cv.pdf - Pages serves a real PDF, while
        raw.githubusercontent.com forces a download. See PROFILE_SETUP.md section 10. -->
-  <a href="https://chl19940220.github.io/files/cv.pdf"><img alt="CV" src="https://img.shields.io/badge/CV-000000?style=flat-square&logo=adobeacrobatreader&logoColor=EC1C24"></a>
+  <a href="https://github.com/chl19940220/files/cv.pdf"><img alt="CV" src="https://img.shields.io/badge/CV-000000?style=flat-square&logo=adobeacrobatreader&logoColor=EC1C24"></a>
   <a href="https://github.com/chl19940220"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=github&logoColor=ffffff"></a>
 </p>
 
