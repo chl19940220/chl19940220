@@ -39,5 +39,3 @@
   <!-- Replace with your real email / blog / social accounts, or delete this line if not needed -->
   <a href="mailto:chl19940220@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white"></a>
 </p>
-
-<p align="center"><sub>Stats powered by <a href="https://github.com/vn7n24fzkq/github-profile-summary-cards">github-profile-summary-cards</a></sub></p>
