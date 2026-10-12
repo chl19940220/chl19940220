@@ -253,7 +253,41 @@ done
 
 ---
 
-## 10. Troubleshooting
+## 10. Hosting your CV
+
+<code>{{CV_PDF_URL}}</code> is the only placeholder that points at a file instead of a
+profile page, so here are the options with the response headers I actually measured:
+
+| Where the PDF lives | URL you paste | Trade-off |
+|---|---|---|
+| Your GitHub Pages site (recommended) | https://chl19940220.github.io/files/cv.pdf | GitHub Pages serves a real <code>application/pdf</code>, so browsers preview it inline. Your site is already live, so this is zero extra setup. |
+| This profile repository | https://raw.githubusercontent.com/chl19940220/chl19940220/main/assets/cv.pdf | Only one repo to manage, but raw.githubusercontent.com returns <code>application/octet-stream</code> plus <code>nosniff</code>, so the browser downloads the file instead of showing it. Every update also stores another full copy in git history. |
+| A GitHub Release asset | https://github.com/chl19940220/chl19940220/releases/download/cv-2026-10/cv.pdf | Keeps binary churn out of the repository, but the URL contains the tag, so it changes on every release. |
+
+Steps for the recommended option:
+
+```bash
+# in your chl19940220.github.io checkout (default branch: master)
+mkdir -p files
+cp /path/to/CV.pdf files/cv.pdf
+git add files/cv.pdf && git commit -m "docs: add CV" && git push
+
+# then point the README at it, from this repository
+sed -i '' 's|{{CV_PDF_URL}}|https://chl19940220.github.io/files/cv.pdf|g' README.md   # macOS
+sed -i    's|{{CV_PDF_URL}}|https://chl19940220.github.io/files/cv.pdf|g' README.md   # GNU/Linux
+```
+
+Open the URL once before pushing to be sure it renders instead of downloading.
+
+One caveat worth knowing: both <code>*.github.io</code> and
+<code>raw.githubusercontent.com</code> are GitHub-hosted and can be slow or unreachable
+from mainland China. If most of your readers are there, host the PDF on a university
+homepage or a domestic service and paste that URL instead - the badge does not care
+where it points.
+
+---
+
+## 11. Troubleshooting
 
 | Symptom | Cause and fix |
 |---|---|

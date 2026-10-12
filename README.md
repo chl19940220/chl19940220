@@ -33,7 +33,11 @@
   <a href="mailto:chl19940220@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-000000?style=flat-square&logo=gmail&logoColor=EA4335"></a>
   <a href="https://scholar.google.com.hk/citations?user=mJhj5bEAAAAJ&hl=en"><img alt="Google Scholar" src="https://img.shields.io/badge/Google_Scholar-000000?style=flat-square&logo=googlescholar&logoColor=39d353"></a>
   <a href="https://orcid.org/0009-0000-4370-9309"><img alt="ORCID" src="https://img.shields.io/badge/ORCID-000000?style=flat-square&logo=orcid&logoColor=A6CE39"></a>
-  <a href="{{CV_PDF_URL}}"><img alt="CV" src="https://img.shields.io/badge/CV-000000?style=flat-square&logo=adobeacrobatreader&logoColor=EC1C24"></a>
+  <!-- CV: paste the URL of your PDF here. Recommended: upload it to your
+       chl19940220.github.io repo as files/cv.pdf and use
+       https://chl19940220.github.io/files/cv.pdf - Pages serves a real PDF, while
+       raw.githubusercontent.com forces a download. See PROFILE_SETUP.md section 10. -->
+  <a href="https://chl19940220.github.io/files/cv.pdf"><img alt="CV" src="https://img.shields.io/badge/CV-000000?style=flat-square&logo=adobeacrobatreader&logoColor=EC1C24"></a>
   <a href="https://github.com/chl19940220"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=github&logoColor=ffffff"></a>
 </p>
 
