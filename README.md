@@ -1,11 +1,12 @@
 <!-- 说明：卡片由 github-profile-summary-cards 生成，theme=vue，animation=fade，时区 UTC+8。
      背景是纯白 #ffffff、主色是 Vue 绿 #41b883，所以在 GitHub 浅色主题下最好看。 -->
 
-<h1 align="center">Hi, I'm chl19940220 👋</h1>
+<h1 align="center">Hi, I'm Haoliang Cheng</h1>
 
 <p align="center">
-  <em>在这里写一句你的定位，例如：全栈开发 / 正在学习 XXX / 关注 AI 与工具链</em>
+  <em>PhD Candidate &middot; Research Focus: AI Agent &middot; Open to Work</em>
 </p>
+
 
 <p align="center">
   <a href="https://github.com/chl19940220?tab=followers"><img alt="Followers" src="https://img.shields.io/github/followers/chl19940220?label=Followers&style=flat-square&color=41b883"></a>
@@ -47,21 +48,13 @@
 
 ---
 
-## 📌 Featured Projects
-
-<!-- 把下面的链接换成你自己的仓库 -->
-
-- [**repo-name-1**](https://github.com/chl19940220/repo-name-1) — 一句话说明这个项目解决了什么问题
-- [**repo-name-2**](https://github.com/chl19940220/repo-name-2) — 一句话说明这个项目解决了什么问题
-
----
-
 ## 📫 Contact
 
 <p align="center">
   <a href="https://github.com/chl19940220"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"></a>
   <!-- 换成你的真实邮箱 / 博客 / 社交账号，不需要就删掉这一行 -->
-  <a href="mailto:your-email@example.com"><img alt="Email" src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white"></a>
+  <a href="mailto:chl19940220@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white"></a>
 </p>
+
 
 <p align="center"><sub>Stats powered by <a href="https://github.com/vn7n24fzkq/github-profile-summary-cards">github-profile-summary-cards</a></sub></p>
