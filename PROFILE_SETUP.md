@@ -11,83 +11,57 @@ Black-terminal academic profile for **github.com/chl19940220**.
 
 | File | Role | Needs editing |
 |---|---|---|
-| README.md | the profile page itself | yes - 26 placeholders |
-| assets/banner.svg | hero terminal banner | yes - 3 placeholders |
+| README.md | the profile page itself | no - every placeholder is filled in |
+| assets/banner.svg | hero terminal banner | no |
 | assets/cards/paper-1.svg | publication card 1 (real Crossref metadata) | no |
-| assets/cards/paper-2.svg | publication card 2 | yes - authors only |
-| assets/cards/more-papers.svg | "all publications" card, links to Google Scholar | no |
-| assets/contribution-graph.svg | rolling 365-day heatmap | no - generated, commit as-is |
-| scripts/gen-contributions.mjs | the generator (zero npm dependencies) | no |
-| .github/workflows/contributions.yml | daily refresh job | no |
-| archive/README.v1.md | your previous README, kept as a backup | delete when happy |
+| assets/cards/paper-2.svg | publication card 2 | yes - the author line only |
+| assets/summary/*.svg | the five GitHub summary cards in the stats section | no - snapshots, see section 6 |
+| scripts/fetch-summary-cards.sh | downloads those five cards | no |
+| .github/workflows/profile-summary-cards.yml | daily refresh of the cards | no |
+| assets/cards/more-papers.svg | "all publications" card | unused - not referenced by the README any more |
+| assets/contribution-graph.svg | 365-day heatmap | unused - not referenced by the README any more |
+| scripts/gen-contributions.mjs | heatmap generator | unused |
+| .github/workflows/contributions.yml | daily heatmap refresh | consider disabling - it commits a file nobody displays |
+| archive/README.v1.md | your previous README | delete when happy |
 
 ---
 
 ## 2. Quick start
 
-**Step 1 - fill in the placeholders.** Every one is listed in section 3. A one-shot
-sanity check that nothing is left (must print nothing):
+**Step 1 - almost nothing to fill in.** The README itself has no placeholders left; the
+only open one is the author line of the second publication card (section 3).
+
+**Step 2 - refresh the summary cards** (optional, they are already committed):
 
 ```bash
-grep -o '{{[A-Z0-9_]*}}' README.md assets/banner.svg assets/cards/*.svg | sort -u
+UTC_OFFSET=8 bash scripts/fetch-summary-cards.sh
 ```
 
-**Step 2 - check the graph renders** (optional, it is already committed):
-
-```bash
-node scripts/gen-contributions.mjs
-```
-
-**Step 3 - let the workflow keep it fresh.** Push the repo, then open
-**Actions -> Refresh contribution graph -> Run workflow** once. After that it runs
-daily at 01:17 UTC. The job needs the default token only; there are no secrets to add.
+**Step 3 - enable the daily refresh.** Push the repo, then open
+**Actions -> Refresh GitHub summary cards -> Run workflow** once. It runs daily at
+01:23 UTC afterwards. The default token is enough; there are no secrets to add.
 
 **Step 4 - push and look at the page.**
 
 ```bash
 git add -A
-git commit -m "feat: black-terminal academic profile"
+git commit -m "docs: add GitHub summary cards"
 git push
 ```
 
 **Step 5 -** visit https://github.com/chl19940220 and check both themes (GitHub
-settings -> Appearance -> light / dark). The banner, cards and graph are black in
-both, so the page never looks broken.
+settings -> Appearance -> light / dark). Every image is black-on-black in both, so the
+page never looks broken.
 
 ---
 
 ## 3. Placeholder checklist
 
-All 26 placeholders, generated from the files themselves:
+Everything is filled in - the sanity check below prints nothing.
 
-| Placeholder | Appears in | Replace with |
+| Placeholder | Where | Note |
 |---|---|---|
-| <code>{{ADVISOR_NAME}}</code> | README | Supervisor, e.g. Prof. Jane Doe. |
-| <code>{{AVAILABLE_FROM}}</code> | README | Earliest start date, e.g. 2026-09 or immediately. |
-| <code>{{BIO_EN}}</code> | README | 2-3 English sentences: what you build, what you study, what you are known for. Keep it factual. |
-| <code>{{BIO_ZH}}</code> | README | The same bio written in Chinese. |
-| <code>{{CITY}}</code> | README | City you are based in. |
-| <code>{{COUNTRY}}</code> | README | Country you are based in. |
-| <code>{{CV_PDF_URL}}</code> | README | Link to your CV: raw GitHub URL, personal site, or a release asset. |
-| <code>{{LAB_NAME}}</code> | README | Lab or group name, e.g. AI Agent Lab. Delete it if you do not have one. |
-| <code>{{LINKEDIN_URL}}</code> | README | Full LinkedIn profile URL. |
-| <code>{{NEWS_1_DATE}}</code> | README | Date of the newest item, e.g. 2026-09. |
-| <code>{{NEWS_1_EN}}</code> | README | One-line English news item: paper accepted, award, talk, new preprint. |
-| <code>{{NEWS_1_ZH}}</code> | README | The same news item in Chinese. |
-| <code>{{NEWS_2_DATE}}</code> | README | Date of the second item. |
-| <code>{{NEWS_2_EN}}</code> | README | Second English news item. |
-| <code>{{NEWS_2_ZH}}</code> | README | Second news item in Chinese. |
-| <code>{{NEWS_3_DATE}}</code> | README | Date of the third item. |
-| <code>{{NEWS_3_EN}}</code> | README | Third English news item. |
-| <code>{{NEWS_3_ZH}}</code> | README | Third news item in Chinese. |
-| <code>{{ORCID_URL}}</code> | README | Full ORCID URL, e.g. https://orcid.org/0000-0000-0000-0000. |
-| <code>{{PAPER_2_AUTHORS}}</code> | cards/paper-2 | Author list for the Journal of Software paper (max 52 characters). Left unfilled on purpose - only you can confirm the author order. The related ASE 2017 paper by the same group lists: Chucheng Zhang, Haoliang Cheng, Enyi Tang, Xin Chen, Lei Bu, Xuandong Li. |
-| <code>{{RESEARCH_AREA_3}}</code> | README | Third research direction. Delete that branch of the tree if you only have two. |
-| <code>{{RESEARCH_TOPIC_1}}</code> | README | Concrete topic under AI Agent, e.g. tool-use planning. |
-| <code>{{RESEARCH_TOPIC_2}}</code> | README | Second topic under AI Agent. |
-| <code>{{RESEARCH_TOPIC_3}}</code> | README | Topic under Software Engineering. |
-| <code>{{RESEARCH_TOPIC_4}}</code> | README | Topic under research area 3. |
-| <code>{{TARGET_ROLE}}</code> | README | Optional - what you are looking for, e.g. research scientist / postdoc / LLM engineer. You dropped it from the banner; delete it here too if you do not want it. |
+| (none) | - | every placeholder in this repository is filled in |
 
 Placeholders are deliberately written as double braces so they survive markdown,
 SVG and sed untouched, and so a single grep finds every one of them.
@@ -169,6 +143,38 @@ The API endpoint is a single <code>const API</code> line: if the public
 contributions API ever disappears, point it at your own JSON with the same
 <code>{ contributions: [{ date, count, level }] }</code> shape and the layout code
 keeps working.
+
+### The GitHub summary cards
+
+<code>assets/summary/</code> holds the five github-profile-summary-cards panels
+(profile details, stats, productive time, languages by repo and by commit). They are
+**committed snapshots, not hot links**, for one reason: the public API rate-limits per
+visitor IP and writes "ERROR!!! Cards are temporarily rate limited." straight into the
+image, so a hot-linked card turns into an error box at random - which is exactly what
+the card gallery shows when you browse it.
+
+```bash
+UTC_OFFSET=8 bash scripts/fetch-summary-cards.sh            # refresh all five
+bash scripts/fetch-summary-cards.sh someuser /tmp/out       # other account, other dir
+```
+
+The script downloads each card, inspects the body for the rate-limit card, and only
+then replaces the committed file - a throttled API can never overwrite a good card with
+an error box. <code>.github/workflows/profile-summary-cards.yml</code> runs it daily.
+
+**Palette.** The HTTP API accepts colour overrides that the official action does not,
+which is how the cards end up <code>bg_color=000000</code> with
+<code>title_color=39d353</code> instead of the theme's blue-grey. Edit the
+<code>QUERY</code> variable in the script to change any of it.
+
+**If you ever switch to the official action** (<code>THEME: "github_dark"</code>), it
+writes to <code>profile-summary-card-output/&lt;theme&gt;/</code> and the colours will no
+longer match the banner exactly.
+
+**Animation.** The <code>animation=fade</code> parameter bakes a CSS fade-in into the
+SVG. Each card starts at <code>opacity: 0</code> and animates to 1 over 3 s in a
+browser; the stylesheet also honours <code>prefers-reduced-motion</code>, so the content
+is never stuck invisible. Drop the parameter if you prefer the cards to appear instantly.
 
 ---
 

@@ -1,26 +1,54 @@
-name: GitHub-Profile-Summary-Cards
+name: Refresh GitHub summary cards
+
+# Runs scripts/fetch-summary-cards.sh, which downloads the five profile-summary cards
+# into assets/summary/ as pure-black SVGs and commits them.
+#
+# WHY NOT HOT-LINK THE API IN THE README
+#   The public instance rate-limits per visitor IP and bakes
+#   "ERROR!!! Cards are temporarily rate limited." into the image, so a hot-linked card
+#   turns into an error box at random. A daily snapshot keeps the page stable.
+#
+# WHY NOT THE OFFICIAL ACTION
+#   vn7n24fzkq/github-profile-summary-cards only accepts a theme name; the HTTP API also
+#   accepts colour overrides. Going through the API is what makes the cards #000000 with
+#   the same terminal green as the banner, cards and contribution graph.
 
 on:
   schedule:
-    # 每天 00:10 UTC（北京时间 08:10）自动刷新
-    - cron: "10 0 * * *"
-  workflow_dispatch:
+    - cron: "23 1 * * *"        # daily 01:23 UTC (= 09:23 Beijing time)
+  workflow_dispatch:            # manual run from the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - "scripts/fetch-summary-cards.sh"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: summary-cards
+  cancel-in-progress: true
 
 jobs:
-  build:
+  fetch:
     runs-on: ubuntu-latest
-    name: generate-github-profile-summary-cards
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
 
-      - uses: vn7n24fzkq/github-profile-summary-cards@release
+      - name: Fetch the cards
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          USERNAME: ${{ github.repository_owner }}
-          UTC_OFFSET: 8
-          THEME: "vue"        # 留空 "" 则生成全部主题
-          ANIMATION: "fade"   # 可选 none/fade/rise/draw/stagger/load/sequence/tint/rgb/rgb-soft
-          AUTO_PUSH: true
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+          UTC_OFFSET: "8"
+        run: bash scripts/fetch-summary-cards.sh
+
+      - name: Commit when something changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/summary
+          if git diff --staged --quiet; then
+            echo "No change - nothing to commit."
+          else
+            git commit -m "chore: refresh GitHub summary cards [skip ci]"
+            git push
+          fi

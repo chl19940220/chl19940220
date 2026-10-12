@@ -35,6 +35,21 @@
 
 ---
 
+## <code>$ ./stats.sh --github</code>
 
+<p align="center">
+  <img width="100%" alt="Profile details: contributions, public repos, account age, contribution trend" src="assets/summary/profile-details.svg">
+</p>
 
-</details>
+<p align="center">
+  <img width="49%" alt="GitHub stats: stars, commits, PRs, issues" src="assets/summary/stats.svg">
+  <img width="49%" alt="Commits per hour of the day" src="assets/summary/productive-time.svg">
+</p>
+
+<p align="center">
+  <img width="49%" alt="Top languages by repository" src="assets/summary/repos-per-language.svg">
+  <img width="49%" alt="Top languages by commit" src="assets/summary/most-commit-language.svg">
+</p>
+
+<sub>Committed snapshots in <a href="assets/summary/">assets/summary/</a>, refreshed daily by <a href=".github/workflows/profile-summary-cards.yml">this workflow</a> &mdash; no third-party rate limit, so the cards never render an error box.</sub>
+
