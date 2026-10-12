@@ -37,11 +37,7 @@
   <a href="https://github.com/chl19940220"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=github&logoColor=ffffff"></a>
 </p>
 
-<p align="center"><sub>Language / 语言 &mdash; click a badge to expand or collapse</sub></p>
 
-<!-- ============================ ENGLISH (default) ============================ -->
-<details open>
-<summary align="center"><img height="26" alt="English (expanded)" src="https://img.shields.io/badge/%E2%96%B8_EN-English-39d353?style=flat-square&labelColor=000000"></summary>
 
 ## <code>$ whoami</code>
 
