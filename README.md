@@ -32,9 +32,8 @@
 <p align="center">
   <a href="mailto:chl19940220@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-000000?style=flat-square&logo=gmail&logoColor=EA4335"></a>
   <a href="https://scholar.google.com.hk/citations?user=mJhj5bEAAAAJ&hl=en"><img alt="Google Scholar" src="https://img.shields.io/badge/Google_Scholar-000000?style=flat-square&logo=googlescholar&logoColor=39d353"></a>
-  <a href="{{ORCID_URL}}"><img alt="ORCID" src="https://img.shields.io/badge/ORCID-000000?style=flat-square&logo=orcid&logoColor=A6CE39"></a>
+  <a href="https://orcid.org/0009-0000-4370-9309"><img alt="ORCID" src="https://img.shields.io/badge/ORCID-000000?style=flat-square&logo=orcid&logoColor=A6CE39"></a>
   <a href="{{CV_PDF_URL}}"><img alt="CV" src="https://img.shields.io/badge/CV-000000?style=flat-square&logo=adobeacrobatreader&logoColor=EC1C24"></a>
-  <a href="{{LINKEDIN_URL}}"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-000000?style=flat-square&logo=linkedin&logoColor=0A66C2"></a>
   <a href="https://github.com/chl19940220"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-000000?style=flat-square&logo=github&logoColor=ffffff"></a>
 </p>
 
@@ -77,9 +76,6 @@ research/
   <a href="https://www.sciengine.com/Jsoft/doi/10.13328/j.cnki.jos.005873"><img width="48.5%" src="assets/cards/paper-2.svg" alt="Approach of Sketch-guided GUI Testing for Mobile App"></a>
 </p>
 
-<p align="center">
-  <a href="https://scholar.google.com.hk/citations?user=mJhj5bEAAAAJ&hl=en"><img width="48.5%" src="assets/cards/more-papers.svg" alt="All publications on Google Scholar"></a>
-</p>
 
 ---
 
