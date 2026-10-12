@@ -1,0 +1,26 @@
+name: GitHub-Profile-Summary-Cards
+
+on:
+  schedule:
+    # 每天 00:10 UTC（北京时间 08:10）自动刷新
+    - cron: "10 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: generate-github-profile-summary-cards
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          USERNAME: ${{ github.repository_owner }}
+          UTC_OFFSET: 8
+          THEME: "vue"        # 留空 "" 则生成全部主题
+          ANIMATION: "fade"   # 可选 none/fade/rise/draw/stagger/load/sequence/tint/rgb/rgb-soft
+          AUTO_PUSH: true
