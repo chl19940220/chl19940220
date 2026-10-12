@@ -44,7 +44,6 @@
 > **PhD Candidate** &middot; Nanjing University
 > Research focus: **AI Agent** &middot; Software Engineering
 
-&nbsp;&nbsp;&#9656; **About** &mdash; {{BIO_EN}}
 &nbsp;&nbsp;&#9656; **Based in** &mdash; NanJing, China
 &nbsp;&nbsp;&#9656; **Status** &mdash; &#128188; **Open to work**
 

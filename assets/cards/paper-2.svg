@@ -29,7 +29,7 @@
 
   <text x="20" y="90" fill="#ffffff" font-size="15.5" font-weight="600">Approach of Sketch-guided GUI</text>
   <text x="20" y="111" fill="#ffffff" font-size="15.5" font-weight="600">Testing for Mobile App</text>
-  <text x="20" y="138" fill="#8b949e" font-size="12">{{PAPER_2_AUTHORS}}</text>
+  <text x="20" y="138" fill="#8b949e" font-size="12">H. Cheng, E. Tang, Y. Zhou, et al.</text>
   <text x="20" y="160" fill="#39d353" font-size="12.5">Journal of Software (&#36719;&#20214;&#23398;&#25253;) &#183; 2020</text>
   <text x="20" y="184" fill="#58a6ff" font-size="12">[ read on SciEngine &#8599; ]</text>
 </svg>
