@@ -51,5 +51,3 @@
   <img width="49%" alt="Top languages by commit" src="assets/summary/most-commit-language.svg">
 </p>
 
-<sub>Committed snapshots in <a href="assets/summary/">assets/summary/</a>, refreshed daily by <a href=".github/workflows/profile-summary-cards.yml">this workflow</a> &mdash; no third-party rate limit, so the cards never render an error box.</sub>
-
